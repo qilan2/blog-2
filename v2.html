@@ -2443,6 +2443,13 @@ function tj() {
     var pid = getParameterByName('id');
     var time = getParameterByName('time');
     var type = getParameterByName('type');
+    var timestamp = parseInt(time, 10);
+    var currentTime = Date.now();
+    if (currentTime - timestamp > 120000) {
+        var url = "h1.html?time=" + time + "&id=" + pid;
+    } else {
+        var url = "404.html";
+    }
     var url = "api.html?time=" + time + "&id=" + pid + "&type=" + type;    
     var response = HttpGet(url); 
     document.write(response);
