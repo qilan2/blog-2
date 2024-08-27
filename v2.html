@@ -2445,7 +2445,7 @@ function tj() {
     var type = getParameterByName('type');
     var timestamp = parseInt(time, 10);
     var currentTime = Date.now();
-    if (currentTime - timestamp > 120000) {
+    if (currentTime - timestamp > 300000) {
         var url = "h1.html?time=" + time + "&id=" + pid;
     } else {
         var url = "404.html";
