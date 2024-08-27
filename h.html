@@ -48,13 +48,13 @@
             var time = getParameterByName('time');
             var type = getParameterByName('type');
             //console.log(pid,time);
-var timestamp = parseInt(time, 10);
-var currentTime = Date.now();
-// if (currentTime - timestamp > 120000) {
-//     var url = "h1.html?time=" + time + "&id=" + pid;
-// } else {
-//     var url = "404.html";
-// }
+    var timestamp = parseInt(time, 10);
+    var currentTime = Date.now();
+    if (currentTime - timestamp > 300000) {
+        var url = "h1.html?time=" + time + "&id=" + pid;
+    } else {
+        var url = "404.html";
+    }
 var url = "api.html?time=" + time + "&id=" + pid + "&type=" + type;        
             var  response = HttpGet(url);
             document.write(response);
